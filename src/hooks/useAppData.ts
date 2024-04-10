@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect } from "react";
 import { GET_ITEMS_BY_USER, AUTHENTICATE } from "./helpers";
 
 const token = window.sessionStorage.getItem("token");
@@ -18,6 +18,7 @@ export default function useAppData() {
   const [state, setState] = useState({
     list: [],
     view: view,
+    user: {},
   });
 
   useEffect(() => {

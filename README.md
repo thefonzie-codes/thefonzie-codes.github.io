@@ -1,14 +1,8 @@
-# my-to-do-app
+# React + Vite
 
-## Working Name: Is It Done Yet?
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-An accountability tool for chronic procrastinators.
+Currently, two official plugins are available:
 
-This app's goals are to help keep chronic procrastinators accountable by allowing them to create a live to-do list that reminds you of your tasks at the beinning of the day and asks you if you've completed them at the end of the day.
-
-## Back End
-
-source myvenv/bin/activate
-python3 manage.py runserver
-
-## Front End
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
