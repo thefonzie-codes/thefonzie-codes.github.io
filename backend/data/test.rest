@@ -1,0 +1,42 @@
+POST http://127.0.0.1:8000/login/
+content-type: application/json
+
+{
+    "username": "testnew2@123.com",
+    "password": "passowrd@123"
+}
+
+###
+
+POST http://127.0.0.1:8000/signup/
+content-type: application/json
+
+{
+    "username": "testnew4@123.com",
+    "password": "passowrd@123"
+}
+
+
+###
+
+GET http://127.0.0.1:8000/test_token/
+content-type: application/json
+Authorization: Token 3985345623cda8b5dec1c59c8661597e36618400
+
+{}
+
+###
+
+GET http://127.0.0.1:8000/reminder_email/
+content-type: application/json
+
+{}
+
+
+###
+
+GET http://127.0.0.1:8000/get_items_by_user_due_today/
+content-type: application/json
+Authorization: Token bdea412fcce397a1b4a5220e198fa65303940935
+
+{}

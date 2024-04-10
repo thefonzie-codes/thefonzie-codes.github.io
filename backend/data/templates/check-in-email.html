@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        .task-box {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+        }
+        .complete-button {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Did you get your tasks done today?</h1>
+    <div class="task-list">
+        {% for task in tasks %}
+            <div class="task-box">
+                {{ task.name }}
+                <button class="complete-button" onclick="CHANGE_STATUS('{{ task.name }}', '{{ task.id }}', '{{ task.completed }}', '{{ user_id }}')">
+                    {% if task.completed %}
+                        Mark Incomplete
+                    {% else %}
+                        Mark Complete
+                    {% endif %}
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        const CHANGE_STATUS = async (name, id, done, userId) => {
+            try {
+                await axios.put(`http://localhost:8000/list_items/${id}`, {
+                    name: name,
+                    completed: !done,
+                    user_id: userId
+                }, HEADERS);
+                console.log('Successfully changed status');
+            }
+            catch (error){
+                console.log(error);
+            }
+        };
+    </script>
+</body>
+</html>
